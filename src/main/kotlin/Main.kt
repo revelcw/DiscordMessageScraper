@@ -54,11 +54,11 @@ suspend fun main(args: Array<String>) {
         GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS_AND_STICKERS
     )
 
-    val api = JDABuilder.createDefault("OTgyNjAwNDk2MTg5Njc3NTY4.G9wJ3N.HPSf60ajVrKtkPXjUxRzPepZ9JRL18SEosg0zQ")
+    val api = JDABuilder.createDefault("<DISCORD TOKEN>")
         .enableIntents(intents).build().awaitReady()
 
     val mongoClient =
-        KMongo.createClient("mongodb+srv://test-learnspigot:LHboGwzHJwg1lYUA@learnspigot.hrrdd5c.mongodb.net/?retryWrites=true&w=majority").coroutine
+        KMongo.createClient("<MONGO URI>").coroutine
 
 
     val scraper = Scraper(mongoClient)
